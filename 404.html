@@ -11,29 +11,29 @@ var path = window.location.pathname;
 if (endsWith(path, '/index.html')) {
   path = path.substring(0, path.length - '/index.html'.length);
 }
+
 if (endsWith(path, '/')) {
   console.log('trailing slash removed from the path: ' + path);
   path = path.substring(0, path.length - 1);
   window.location.pathname = path;
-  return;
-}
-
-console.log('processing not found path: ' + path);
-
-if (path == '/eap' || path == '/eap.html') {
-  window.location.pathname = '/download.html';
-} else if (
-    endsWith(path, '/gerrit') ||
-    endsWith(path, '/download') ||
-    endsWith(path, '/documentation') ||
-    endsWith(path, '/support') ||
-    endsWith(path, '/contacts') ||
-    endsWith(path, '/pricing')) {
-  window.location.pathname = path + '.html';
-} else if (path == '/register' || path == '/register.html') {
-  window.location.pathname = '/pricing.html';
 } else {
-  window.location.hostname = 'old.subgit.com';
+    console.log('processing not found path: ' + path);
+
+    if (path == '/eap' || path == '/eap.html') {
+      window.location.pathname = '/download.html';
+    } else if (
+        endsWith(path, '/gerrit') ||
+        endsWith(path, '/download') ||
+        endsWith(path, '/documentation') ||
+        endsWith(path, '/support') ||
+        endsWith(path, '/contacts') ||
+        endsWith(path, '/pricing')) {
+      window.location.pathname = path + '.html';
+    } else if (path == '/register' || path == '/register.html') {
+      window.location.pathname = '/pricing.html';
+    } else {
+      window.location.hostname = 'old.subgit.com';
+    }
 }
 
 </script>
