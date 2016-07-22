@@ -5,6 +5,19 @@ subtitle: Release Notes
 <div class="wrapper">
 {% capture content %}
 
+### SubGit 3.2.1 Release Notes
+SubGit 3.2.1 is a minor feature release. New in SubGit 3.2.1:
+
+New Features:
+
+* Option svn.allowBranchReplacement added, defaul is to disable SVN branch replacement when
+  translating Git commits ot SVN.
+
+Fixed Bugs:
+
+* Improved handling of situations when reference is locked, but lock is no longer valid.
+* Translation of SVN replacing symbolic link with a directory did not work properly, fixed.
+
 ### SubGit 3.2.0 Release Notes
 SubGit 3.2.0 is a minor feature release. New in SubGit 3.2.0:
 
