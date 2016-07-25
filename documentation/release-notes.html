@@ -10,8 +10,12 @@ SubGit 3.2.1 is a minor feature release. New in SubGit 3.2.1:
 
 New Features:
 
-* Option svn.allowBranchReplacement added, defaul is to disable SVN branch replacement when
+* Option svn.allowBranchReplacement added, default is to disable SVN branch replacement when
   translating Git commits ot SVN.
+* Option svn.allowBranchDeletion added, default is to allow SVN branch deletion when translating
+  Git commits to SVN.
+* Option svn.allowForcePush added, when set to false SubGit rejects any attempts to perform
+  non-fast-forward updates for those refs which are synchronized with SVN repository.
 
 Fixed Bugs:
 
