@@ -12,7 +12,11 @@ if (endsWith(path, '/index.html')) {
   path = path.substring(0, path.length - '/index.html'.length);
 }
 
-if (endsWith(path, '/')) {
+if (endsWith(path, '/documentation/') ||
+    endsWith(path, '/gerrit/')) {
+	path = path.substring(0, path.length - 1);
+	window.location.pathname = path + ".html"
+} else if (endsWith(path, '/')) {
   console.log('trailing slash removed from the path: ' + path);
   path = path.substring(0, path.length - 1);
   window.location.pathname = path;
