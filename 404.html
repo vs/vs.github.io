@@ -25,6 +25,8 @@ if (endsWith(path, '/documentation/') ||
 
     if (path == '/eap' || path == '/eap.html') {
       window.location.pathname = '/download.html';
+    } else if (path == '/stash' || path == '/stash.html') {
+      window.location.pathname = '/bitbucket.html'
     } else if (
         endsWith(path, '/gerrit') ||
         endsWith(path, '/download') ||
