@@ -19,7 +19,7 @@
 
     var request = new XMLHttpRequest();
 
-    request.open("POST", "http://svnkit.com/subgit/send2.php", true);
+    request.open("POST", "https://svnkit.com/subgit/send2.php", true);
     var updater = function() {
       if (request.readyState == 4) {
 
