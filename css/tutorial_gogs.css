@@ -1,0 +1,86 @@
+.container
+{
+    margin-top: 50px;
+    position: relative;
+}
+
+.slider 
+{
+  
+  
+}
+
+#content 
+{
+    position: absolute;
+    height: 90vh;
+    width: = 50vw;
+    left: 20vw;
+    right: 20vw;
+    box-shadow: 0 0 4px rgba(0,0,0,.4);
+    background: #66869a;
+    
+}
+
+@keyframes appear
+{
+    from
+    {
+        opacity: 0;
+    }
+    to
+    {
+        opacity: 1;
+    }
+}
+
+
+#content object
+{
+    overflow-y: visible;
+    animation-name: appear;
+    animation-duration: 1s;
+    width: 100%;
+    height: inherit;
+    font-family: 'allerregular', sans-serif;
+    font-size: 20px;
+    line-height: 28px;
+}
+
+#content object img
+{
+    right: 50%;
+    left: 50%;
+}
+
+.arrow_left 
+{
+    position: absolute;
+    top: 25vh;
+    left: 2vw;
+    width: 11vw;
+    margin: 4vw 4vw;
+}
+
+
+.left 
+{
+	transition: all .2s ease-in-out 0s;
+}
+
+.arrow_right
+{
+    
+    position: absolute;
+    top: 25vh;
+    right: 2vw;
+    width: 11vw;
+    margin: 4vw 4vw;
+}
+
+
+.right 
+{
+    transition: all .5s ease-in-out 0s;
+}
+
