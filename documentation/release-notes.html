@@ -1,0 +1,155 @@
+---
+layout: documentation
+subtitle: Release Notes
+---
+<div class="wrapper">
+{% capture content %}
+### SubGit 3.2.2 Release Notes
+SubGit 3.2.2 is a minor bugfix release. New in SubGit 3.2.2:
+
+Fixed Bugs:
+
+* Registration expiration date was handled incorrectly in version 3.2.1, fixed.
+
+### SubGit 3.2.1 Release Notes
+SubGit 3.2.1 is a minor feature release. New in SubGit 3.2.1:
+
+New Features:
+
+* Option svn.allowBranchReplacement added, default is to disable SVN branch replacement when
+  translating Git commits ot SVN.
+* Option svn.allowBranchDeletion added, default is to allow SVN branch deletion when translating
+  Git commits to SVN.
+* Option svn.allowForcePush added, when set to false SubGit rejects any attempts to perform
+  non-fast-forward updates for those refs which are synchronized with SVN repository.
+
+Fixed Bugs:
+
+* Improved handling of situations when reference is locked, but lock is no longer valid.
+* Translation of SVN replacing symbolic link with a directory did not work properly, fixed.
+
+### SubGit 3.2.0 Release Notes
+SubGit 3.2.0 is a minor feature release. New in SubGit 3.2.0:
+
+New Features:
+
+* Improved GitLab integration, see http://subgit.com/gitlab for HOWTO.
+* Support for new 1.9 Subversion FSFS repository format.
+* Improved unsynced commits handling.
+
+Fixed Bugs:
+
+* Client SSL certificates without passphrase were not supported, fixed.
+* Push of two branches deletion might result in out-of-date error, fixed.
+* Stability improvements.
+
+### SubGit 3.1.2 Release Notes
+SubGit 3.1.2 is a minor bugfix release. New in SubGit 3.1.2:
+
+New Features:
+
+* SGT-1076: specify timezone to use in Git commits (default is UTC).
+
+Other Changes:
+
+* JGit Library updated to v4.2.0
+
+### SubGit 3.1.1 Release Notes
+SubGit 3.1.1 is a minor bugfix release. New in SubGit 3.1.1:
+
+Fixed bugs:
+
+* SGT-1056: Branch deletion in Git may overwrite changes in SVN on the same branch, fixed.
+* Improvements in conflicts recovery code.
+
+Other:
+
+* Java 1.7 or newer is required.
+
+### SubGit 3.1.0 Release Notes
+SubGit 3.1.0 is a minor feature and bugfix release. New in SubGit 3.1.0:
+
+* SubGit could now be licensed for a number of Git user, i.e. number of user that push to Git/SVN mirror using Git. With Git users registration number of SVN committers is not taken into account.
+* Evaluation period is extended to 30 days.
+* Sync will be now disabled upon evaluation period expiration.
+
+Fixed bugs:
+
+* Stability and performance improvements.
+
+Other:
+
+* Java 1.7 or newer is required.
+
+### SubGit 3.0.0 Release Notes
+SubGit 3.0.0 is a major feature release that introduces the following features:
+
+*   Automated SVN project layout detection (subgit configure --layout 'auto').
+*   Automated out-of-sync state recovery.
+*   Single-directory SVN project support.
+*   Skip anonymous Git branches translation (branches mapping without shelves option).
+*   Translation performance improved.
+*   Shared background daemon process to manage multiple mirror repositories on the same host.
+*   Script-based authors mapping support.
+*   Git credentials helper support to avoid plain-text SVN credentials being part of configuration.
+*   Simplified command line options.
+
+### SubGit 2.0.3 Release Notes
+SubGit 2.0.3 is bug fix release that fixes the following issues:
+
+*   Tranlsation peformance improved for multi-project repositories.
+*   Failure to update single Git reference no longer results in translation to stop.
+
+In addition there is the following feature has been added:
+
+*   Subversion pre-revprop-change hook is no longer required for authors mapping to work.
+
+### SubGit 2.0.2 Release Notes
+SubGit 2.0.2 is bug fix release that fixes the following issues:
+
+*   Potential translation failure on .gitignore rename
+*   Issues related to the 'skip' option that allows to exclude paths from translation
+*   SSL client certificate was ignored when specified on the command line of the 'import' command
+*   New version of SVNKit library is used that introduces improvements in SSL authentication and GNOME keyring support
+
+In addition there is the following feature has been added:
+
+*   pathEncoding option now supports 'none' value to disable path translation
+
+### SubGit 2.0.1 Release Notes
+SubGit 2.0.1 introduces the following features:
+
+*   Adding a new branch mapping to configuration file no longer requires a full rebuild of a Git repository in case newly mapped branch never existed in Subversion repository.
+*   SubGit will now use SSH-agent to authenticate on remote Subversion server when SSH-agent is available.
+*   Repositories created with Subversion 1.8 now supported in the local mirror mode.
+
+### SubGit 2.0.0 Release Notes
+SubGit 2.0.0 introduces the following major features:
+
+*   Support for remote Subversion repositories:
+
+    *   SubGit 2.0.0 introduces new remote mirror mode. In this mode all synchronization related tasks are performed on the Git repository side, Subversion side remains untouched. Consequently, Subversion users are not aware of the mirror(s) presence, however their changes are reflected in the Git repository. Changes pushed by the Git users are instantly promoted to the Subversion repository. SubGit 'Remote' Book provides full details on the new mode operation and configuration.
+
+*   One-shot import from Subversion to Git
+
+    *   To import existing project from Subversion to Git without configuring a mirror, one may now use new shortcut import command. This command has being designed to eliminate human interaction and allows all the options to be specified once on the command line. You may find more information on import command in SubGit 'Remote' Book.
+
+*   Performance improvements
+
+    *   SubGit instruments repository with the hook scripts that are invoked on each push or commit (in case SubGit is installed in Subversion repository). In version 2.0, we have reimplemented these hooks as native binaries so that JVM startup overhead is no longer an issue. On platforms where native binaries are not available (OS X or some specific Linux versions) good old JVM-based hooks are used.
+
+*   Flexible branches and tags layout
+    *   Version 2.0 allows to specify multiple branches locations for a single project. For instance, the following mapping will work now:
+
+            [svn]
+            ...
+            trunk = trunk:refs/heads/master
+            branches = branches/*:refs/heads/*
+            branches = releases/*:refs/releases/*
+            tags = tags/*:refs/tags/*
+            shelves = shelves/*:refs/shelves/*
+        Find more in the [branches mapping](../book.html#5) section of the SubGit Local Book.
+{% endcapture %}
+
+{{ content | markdownify }}
+</div>

@@ -1,0 +1,65 @@
+---
+layout: default
+active: download
+subtitle: Download SubGit 3.2.2
+---
+<div class="wrapper">
+  <div id="tab_wrap">
+    <ul id="tabs">
+      <li class="current"><div id="tabs_header1">Universal Zip Archive (Linux, OS X, Windows)</div></li>
+      <li><div id="tabs_header2">Debian Package (Debian, Ubuntu)</div></li>
+    </ul>
+    <div class="box visible">
+      <div class="tab_box_inner">
+        <p>Build: <strong>&#35;3603</strong>, published on: <strong>Aug 15, 2016</strong></p>
+        <p>Binaries zip archive: <a href="downloadingzip.html" class="button_orange" style="margin:-10px 0 -10px 20px !important;">subgit-3.2.2.zip</a></p>
+        <p class="checksum">file md5 checksum: 0fd85fd6a800c225bcd4f70c120b3acf</p>
+        <h6>Quick start:</h6>
+        <pre>
+<code># download zip-archive above
+#
+$ unzip subgit-3.2.2.zip
+#
+# make sure you're acting on behalf of the same user you use
+# to serve Subversion repository
+#
+$ subgit-3.2.2/bin/subgit configure --layout auto SVN_URL REPOS.GIT
+$ subgit-3.2.2/bin/subgit install REPOS.GIT
+$ git clone REPOS.GIT working-tree</code></pre>
+      </div>
+    </div>
+    <div class="box">
+      <div class="tab_box_inner">
+        <p>Build: <strong>&#35;3603</strong>, published on: <strong>Aug 15, 2016</strong></p>
+        <p>Debian package: <a href="downloadingdeb.html" class="button_orange" style="margin:-10px 0 -10px 20px !important;">subgit-3.2.2_all.deb</a></p>
+        <p class="checksum">file md5 checksum: a33e66077469a8dd2c437440211e44f1</p>
+        <h6>Quick start:</h6>
+        <pre>
+<code># download Debian package above and fetch missing dependencies
+#
+$ sudo dpkg -i subgit_3.2.2_all.deb
+$ sudo apt-get install -f
+#
+# make sure you're acting on behalf of the same user you use
+# to serve Subversion repository
+#
+$ subgit-3.2.2/bin/subgit configure --layout auto SVN_URL REPOS.GIT
+$ subgit-3.2.2/bin/subgit install REPOS.GIT
+$ git clone REPOS.GIT working-tree</code></pre>
+      </div>
+    </div>
+  </div>
+  <div id="new_wrap">
+    <p>By using SubGit you agree with a SubGit <a href="license.html">Licensing Agreement</a>.</p>
+    <p>New in version 3.2.2 (<a href="documentation/release-notes.html">complete release notes</a>):</p>
+    <ul>
+       <li>— Fixed issue with registration date being not correctly handled.</li>
+    </ul>
+    <p>System Requirements:</p>
+    <ul>
+      <li>— Java 1.7 or newer version.</li>
+      <li>— We test SubGit on Linux, Windows and OS X systems.</li>
+    </ul>
+    <p>Refer to <a href="documentation.html">documentation</a> page for more information on how to use SubGit.</p>
+  </div>
+</div>
